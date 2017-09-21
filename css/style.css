@@ -589,15 +589,19 @@ th {
       z-index: 15;
       border-bottom: 3px solid #EEE; }
     header #title_cursor {
-      display: none;
+      visibility: hidden;
       float: left;
       font-size: 21px;
       margin-top: 9px;
       color: #F5F5F5;
-      animation: blink 1.2s infinite step-end;
-      -ms-animation: blink 1.2s infinite step-end;
-      -moz-animation: blink 1.2s infinite step-end;
-      -webkit-animation: blink 1.2s infinite step-end; }
+      animation: blink 1s infinite step-end;
+      -ms-animation: blink 1s infinite step-end;
+      -moz-animation: blink 1s infinite step-end;
+      -webkit-animation: blink 1s infinite step-end;
+      transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -webkit-transiton: all 0.5s ease; }
 
   /* Menu */
   /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */

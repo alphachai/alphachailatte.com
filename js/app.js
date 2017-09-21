@@ -11,12 +11,14 @@ function showMenu() {
 	$("#burger").addClass("cross");
 	$("#menu").addClass("open");
 	$("#content").css("opacity", "0");
+	$("#title_cursor").css("visibility", "visible");
 }
 
 function hideMenu() {
 	$("#burger").removeClass("cross");
 	$("#menu").removeClass("open");
 	$("#content").css("opacity", "1");
+	$("#title_cursor").css("visibility", "hidden");
 }
 
 // menu animation
