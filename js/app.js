@@ -5,6 +5,12 @@ $(document).ready(function($) {
 	$("#preloader-wrap").animate({opacity: 0}, 400);
 	setTimeout(function() {$("#loading").animate({opacity: 0}, 200);}, 400);
 	setTimeout(function() {$("#loading").remove();}, 600);
+	/*
+	$('.matrix').each( function() {
+		var ticker = new Ticker($(this)).reset();
+		$(this).data('ticker', ticker );
+	});
+	*/
 });
 
 function showMenu() {

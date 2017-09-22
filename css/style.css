@@ -464,8 +464,58 @@ th {
     100% {
       margin-left: 0px;
       opacity: 1; } }
-  /* General */
-  /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+  @-webkit-keyframes glitch {
+    0% {
+      transform: translate(0); }
+    20% {
+      transform: translate(-5px, 5px); }
+    40% {
+      transform: translate(-5px, -5px); }
+    60% {
+      transform: translate(5px, 5px); }
+    80% {
+      transform: translate(5px, -5px); }
+    to {
+      transform: translate(0); } }
+  @-moz-keyframes glitch {
+    0% {
+      transform: translate(0); }
+    20% {
+      transform: translate(-5px, 5px); }
+    40% {
+      transform: translate(-5px, -5px); }
+    60% {
+      transform: translate(5px, 5px); }
+    80% {
+      transform: translate(5px, -5px); }
+    to {
+      transform: translate(0); } }
+  @keyframes glitch {
+    0% {
+      transform: translate(0); }
+    20% {
+      transform: translate(-5px, 5px); }
+    40% {
+      transform: translate(-5px, -5px); }
+    60% {
+      transform: translate(5px, 5px); }
+    80% {
+      transform: translate(5px, -5px); }
+    to {
+      transform: translate(0); } }
+  .ticker {
+    color: #fff;
+    margin: auto; }
+
+  .ticker span {
+    display: inline-block;
+    transform: translateX(100%) scale(0.9);
+    transition: transform 500ms; }
+
+  .ticker .done {
+    color: #29ff29;
+    transform: translateX(0) scale(1); }
+
   html, body {
     width: 100%;
     color: #303030;
@@ -507,8 +557,6 @@ th {
     z-index: -100;
     opacity: 0.4; }
 
-  /* Loading animation */
-  /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   .off {
     -moz-animation-name: none !important;
     -webkit-animation-name: none !important;
@@ -574,8 +622,6 @@ th {
     text-transform: uppercase;
     color: #FFFFFF; }
 
-  /* Header / Title */
-  /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   header {
     padding: 50px 0 0;
     width: auto;
@@ -630,7 +676,7 @@ th {
 
   .console_mode {
     color: #29ff29; }
-    .console_mode #logo #picture_border {
+    .console_mode #logo #picture_border #picture {
       opacity: 0; }
     .console_mode #logo #title {
       color: #29ff29;
@@ -654,8 +700,6 @@ th {
     .console_mode nav .cross .bun-bot {
       background-color: #29ff29; }
 
-  /* Menu */
-  /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   nav {
     margin-top: 12.5px;
     position: relative;
@@ -756,8 +800,6 @@ th {
       -moz-transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg); }
 
-  /* Content */
-  /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   #content {
     clear: both;
     padding: 50px 0;
@@ -814,8 +856,6 @@ th {
       article .body blockquote p {
         margin-top: 0;
         color: #A1A1A1; } }
-/* Footer */
-/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 footer {
   font-family: "PT Serif", serif;
   font-size: 16px;

@@ -6,6 +6,8 @@
 
 @media all
 {
+	// Effects & Animations
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	@include keyframes(preloader) {
 		0% { @include transform_rotate(0deg) }
 		50% { @include transform_rotate(180deg); background:$color_preloadSecondary; }
@@ -26,9 +28,33 @@
 		100% { margin-left: 0px; opacity: 1; }
 	}
 
+	@include keyframes(glitch) {
+	    0% { transform: translate(0) }
+	    20% { transform: translate(-5px, 5px) }
+	    40% { transform: translate(-5px, -5px) }
+	    60% { transform: translate(5px, 5px) }
+	    80% { transform: translate(5px, -5px) }
+	    to { transform: translate(0) }
+	}
 
-	/* General */
-	/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+	.ticker {
+		color: #fff;
+		margin: auto;
+	}
+
+	.ticker span {
+		display: inline-block;
+		transform: translateX(100%) scale(0.9);
+		transition: transform 500ms;
+	}
+
+	.ticker .done {
+		color: $color_consoleModeText ;
+		transform: translateX(0) scale(1);
+	}
+
+	// General
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	html, body {
 		width: 100% ;
 		color: $color_defaultFontColor ;
@@ -88,8 +114,8 @@
 		opacity: 0.4 ;
 	}
 
-	/* Loading animation */
-	/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+	// Loading animation
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	.off {
 		-moz-animation-name: none !important ;
 		-webkit-animation-name: none !important ;
@@ -156,8 +182,8 @@
 		color: #FFFFFF ;
 	}
 
-	/* Header / Title */
-	/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+	// Header / Title
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	$header_height: 50px ;
 
 	header {
@@ -182,6 +208,7 @@
 			@include border-radius($header_height) ;
 			@include box-shadow(0, 0, 0px, 0px, #afafaf) ;
 			z-index: 15 ;
+			//border: 1px solid #FFF ;
 		}
 
 		& #picture {
@@ -220,7 +247,10 @@
 
 		& #logo {
 			& #picture_border {
-				opacity: 0 ;
+				//border: 1px solid rgba(42, 251, 41, 0.14) ;
+				& #picture {
+					opacity: 0 ;
+				}
 			}
 			& #title {
 				color: $color_consoleModeText ;
@@ -256,8 +286,8 @@
 		}
 	}
 
-	/* Menu */
-	/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+	// Menu
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	$burger_height: 25px ;
 	$burger_margin: (($header_height - $burger_height)/2) ;
@@ -383,8 +413,8 @@
 		}
 	}
 
-	/* Content */
-	/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+	// Content
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	#content {
 		clear: both ;
 		padding: 50px 0 ;
@@ -461,8 +491,8 @@
 	}
 }
 
-/* Footer */
-/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+// Footer
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 footer {
 	font-family: "PT Serif", serif ;
 	font-size: 16px ;
