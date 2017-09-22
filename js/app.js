@@ -10,15 +10,23 @@ $(document).ready(function($) {
 function showMenu() {
 	$("#burger").addClass("cross");
 	$("#menu").addClass("open");
-	$("#content").css("opacity", "0");
+	$("#content").addClass("content_hidden");
+	$("#fadeout").addClass("fadeout_hidden");
+	$("header").addClass("console_mode");
+
 	$("#title_cursor").css("visibility", "visible");
+	$("body").css("background-color", "rgba(0, 0, 0, 1.0)");
 }
 
 function hideMenu() {
 	$("#burger").removeClass("cross");
 	$("#menu").removeClass("open");
-	$("#content").css("opacity", "1");
+	$("#content").removeClass("content_hidden");
+	$("#fadeout").removeClass("fadeout_hidden");
+	$("header").removeClass("console_mode");
+
 	$("#title_cursor").css("visibility", "hidden");
+	$("body").css("background-color", "rgba(255, 255, 255, 1.0)");
 }
 
 // menu animation

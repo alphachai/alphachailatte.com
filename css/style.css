@@ -447,7 +447,11 @@ th {
   /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   html, body {
     width: 100%;
-    color: #303030; }
+    color: #303030;
+    transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transiton: all 0.5s ease; }
 
   h2 {
     margin: 0; }
@@ -460,6 +464,7 @@ th {
     position: fixed;
     z-index: 2;
     bottom: 0em;
+    opacity: 1;
     width: 100%;
     height: 4em;
     background: -webkit-linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%);
@@ -467,6 +472,9 @@ th {
     background-image: -o-linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%);
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%);
     background-image: -ms-linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%); }
+
+  .fadeout_hidden {
+    opacity: 0 !important; }
 
   #particles {
     position: fixed;
@@ -579,29 +587,43 @@ th {
       background: url("../assets/avatar.jpg");
       background-size: cover; }
     header #title {
+      color: #000000;
       float: left;
       font-family: "Open Sans", sans-serif;
       font-size: 30px;
-      color: #000000;
       margin-left: 20px;
       margin-top: 4px;
       font-weight: 300;
       z-index: 15;
       border-bottom: 3px solid #EEE; }
     header #title_cursor {
-      visibility: hidden;
+      color: #000000;
       float: left;
-      font-size: 21px;
-      margin-top: 9px;
-      color: #F5F5F5;
-      animation: blink 1s infinite step-end;
-      -ms-animation: blink 1s infinite step-end;
-      -moz-animation: blink 1s infinite step-end;
-      -webkit-animation: blink 1s infinite step-end;
+      font-size: 30px;
+      margin-top: 4px;
+      visibility: hidden;
+      animation: blink 0.7s infinite step-end;
+      -ms-animation: blink 0.7s infinite step-end;
+      -moz-animation: blink 0.7s infinite step-end;
+      -webkit-animation: blink 0.7s infinite step-end;
       transition: all 0.5s ease;
       -ms-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
       -webkit-transiton: all 0.5s ease; }
+
+  .console_mode {
+    color: #29ff29; }
+    .console_mode #logo #picture_border {
+      opacity: 0; }
+    .console_mode #logo #title {
+      color: #29ff29;
+      border-color: transparent; }
+    .console_mode #logo #title_cursor {
+      color: #29ff29; }
+    .console_mode nav .cross .bun-top {
+      background-color: #29ff29; }
+    .console_mode nav .cross .bun-bot {
+      background-color: #29ff29; }
 
   /* Menu */
   /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -616,13 +638,9 @@ th {
       width: 700px;
       text-align: right;
       opacity: 0;
-      visibility: hidden;
       display: table;
-      background: #FFF;
       z-index: 15;
       padding-bottom: 5px;
-      border-color: #EAEAEA;
-      border: 1px solid #FFF;
       transition: all 0.4s ease;
       -ms-transition: all 0.4s ease;
       -moz-transition: all 0.4s ease;
@@ -648,7 +666,7 @@ th {
             font-size: 26px;
             font-weight: 300;
             text-decoration: none;
-            color: inherit;
+            color: #29ff29;
             text-align: left;
             text-transform: lowercase;
             transition: all 0.5s ease;
@@ -660,8 +678,7 @@ th {
             nav #menu ul li:hover:before {
               content: "> "; }
     nav .open {
-      opacity: 1 !important;
-      visibility: visible !important; }
+      opacity: 1 !important; }
     nav #burger {
       float: right;
       cursor: pointer;
@@ -711,14 +728,18 @@ th {
   /* Content */
   /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   #content {
+    clear: both;
     padding: 50px 0;
     width: auto;
     margin: auto;
-    clear: both;
+    opacity: 1;
     transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -webkit-transiton: all 0.5s ease; }
+
+  .content_hidden {
+    opacity: 0 !important; }
 
   article {
     font-family: "Open Sans", serif;
