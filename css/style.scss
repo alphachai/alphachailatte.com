@@ -21,6 +21,11 @@
 		100% { opacity:1 }
 	}
 
+	@include keyframes(menu_wave) {
+		50% { margin-left: 15px; opacity: 0.5; }
+		100% { margin-left: 0px; opacity: 1; }
+	}
+
 
 	/* General */
 	/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -201,13 +206,12 @@
 		}
 
 		& #title_cursor {
-			color: $color_title ;
+			color: $color_consoleModeText ;
 			float: left ;
 			font-size: 30px ;
 			margin-top: 4px ;
 			visibility: hidden ;
 			@include animation(blink 0.7s infinite step-end);
-			@include transition(all .5s ease);
 		}
 	}
 
@@ -223,16 +227,31 @@
 				border-color: transparent ;
 			}
 			& #title_cursor {
-				color: $color_consoleModeText ;
+				visibility: visible ;
 			}
 		}
 
-		& nav .cross {
-			& .bun-top {
-				background-color: $color_consoleModeText ;
+		& nav {
+			& #menu ul li {
+				opacity: 1 ;
+				@include animation(menu_wave 0.3s 1 linear);
+				&:nth-child(1) {
+					animation-delay: 0.1s
+				}
+				&:nth-child(2) {
+					animation-delay: 0.18s
+				}
+				&:nth-child(3) {
+					animation-delay: 0.26s
+				}
 			}
-			& .bun-bot {
-				background-color: $color_consoleModeText ;
+			& .cross {
+				& .bun-top {
+					background-color: $color_consoleModeText ;
+				}
+				& .bun-bot {
+					background-color: $color_consoleModeText ;
+				}
 			}
 		}
 	}
@@ -261,6 +280,7 @@
 			display: table ;
 			z-index: 15 ;
 			padding-bottom: 5px ;
+			margin-left: -1px ;
 			@include transition($menu_transition);
 
 			& ul {
@@ -276,6 +296,7 @@
 					clear: both ;
 					margin: 16px 0 ;
 					padding-left: 0px ;
+					opacity: 0 ;
 					@include transition(all .1s ease);
 
 					& a {
