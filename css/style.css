@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -445,25 +446,19 @@ th {
       opacity: 1; } }
   @-webkit-keyframes menu_wave {
     50% {
-      margin-left: 15px;
-      opacity: 0.5; }
+      margin-left: 10px; }
     100% {
-      margin-left: 0px;
-      opacity: 1; } }
+      margin-left: 0px; } }
   @-moz-keyframes menu_wave {
     50% {
-      margin-left: 15px;
-      opacity: 0.5; }
+      margin-left: 10px; }
     100% {
-      margin-left: 0px;
-      opacity: 1; } }
+      margin-left: 0px; } }
   @keyframes menu_wave {
     50% {
-      margin-left: 15px;
-      opacity: 0.5; }
+      margin-left: 10px; }
     100% {
-      margin-left: 0px;
-      opacity: 1; } }
+      margin-left: 0px; } }
   @-webkit-keyframes glitch {
     0% {
       transform: translate(0); }
@@ -518,11 +513,13 @@ th {
 
   html, body {
     width: 100%;
+    height: 100%;
     color: #303030;
     transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
-    -webkit-transiton: all 0.5s ease; }
+    -webkit-transiton: all 0.5s ease;
+    font-family: "Open Sans", sans-serif; }
 
   h2 {
     margin: 0; }
@@ -530,6 +527,17 @@ th {
   #column {
     margin: 0 auto;
     width: 700px; }
+
+  #nav_curtain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 3;
+    transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transiton: all 0.5s ease; }
 
   #fadeout {
     position: fixed;
@@ -544,7 +552,8 @@ th {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%);
     background-image: -ms-linear-gradient(rgba(255, 255, 255, 0) 0%, white 100%); }
 
-  .fadeout_hidden {
+  .hidden {
+    visibility: hidden !important;
     opacity: 0 !important; }
 
   #particles {
@@ -591,6 +600,9 @@ th {
     height: 30px;
     background: transparent;
     border-radius: 50px;
+    -ms-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
     animation: spin 0.5s infinite linear;
     -ms-animation: spin 0.5s infinite linear;
     -moz-animation: spin 0.5s infinite linear;
@@ -604,6 +616,9 @@ th {
       border-left: 2px solid transparent;
       border-right: 2px solid transparent;
       border-radius: 50px;
+      -ms-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
       content: '';
       top: -12px;
       left: -12px; }
@@ -639,10 +654,8 @@ th {
       -ms-border-radius: 50px;
       -moz-border-radius: 50px;
       -webkit-border-radius: 50px;
-      box-shadow: 0 0 0px 0px #afafaf;
-      -moz-box-shadow: 0 0 0px 0px #afafaf;
-      -webkit-box-shadow: 0 0 0px 0px #afafaf;
-      z-index: 15; }
+      z-index: 15;
+      border: 1px solid transparent; }
     header #picture {
       border-radius: 25px;
       -ms-border-radius: 25px;
@@ -666,7 +679,7 @@ th {
     header #title_cursor {
       color: #29ff29;
       float: left;
-      font-size: 30px;
+      font-size: 26px;
       margin-top: 4px;
       visibility: hidden;
       animation: blink 0.7s infinite step-end;
@@ -676,8 +689,10 @@ th {
 
   .console_mode {
     color: #29ff29; }
-    .console_mode #logo #picture_border #picture {
-      opacity: 0; }
+    .console_mode #logo #picture_border {
+      border: 1px solid rgba(42, 251, 41, 0.3); }
+      .console_mode #logo #picture_border #picture {
+        opacity: 0; }
     .console_mode #logo #title {
       color: #29ff29;
       border-color: transparent; }
@@ -685,6 +700,7 @@ th {
       visibility: visible; }
     .console_mode nav #menu ul li {
       opacity: 1;
+      visibility: visible;
       animation: menu_wave 0.3s 1 linear;
       -ms-animation: menu_wave 0.3s 1 linear;
       -moz-animation: menu_wave 0.3s 1 linear;
@@ -711,6 +727,7 @@ th {
       width: 700px;
       text-align: right;
       opacity: 0;
+      visibility: hidden;
       display: table;
       z-index: 15;
       padding-bottom: 5px;
@@ -800,7 +817,100 @@ th {
       -moz-transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg); }
 
-  #content {
+  .timeline {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transiton: all 0.5s ease; }
+    .timeline::after {
+      display: block;
+      content: "";
+      clear: both; }
+    .timeline .line-item {
+      float: left;
+      clear: both;
+      position: relative;
+      margin: 20px 0;
+      width: 100%; }
+      .timeline .line-item:after {
+        width: 100px;
+        clear: both; }
+      .timeline .line-item .emphasis {
+        position: absolute;
+        top: 58px;
+        left: -13px;
+        width: 11px;
+        height: 11px;
+        border: 6px solid #FFF;
+        background-color: #E7E7E7;
+        border-radius: 11px;
+        -ms-border-radius: 11px;
+        -moz-border-radius: 11px;
+        -webkit-border-radius: 11px; }
+      .timeline .line-item .event-title {
+        color: #272727;
+        font-size: 40px;
+        font-weight: 300;
+        width: 100%;
+        text-align: left;
+        text-transform: uppercase; }
+      .timeline .line-item .event-date {
+        color: #AAA;
+        font-size: 14px;
+        font-weight: 300;
+        width: 100%;
+        text-align: left;
+        text-transform: uppercase;
+        margin: auto; }
+        .timeline .line-item .event-date span {
+          transform: translateX(100%) scale(0.9);
+          transition: transform 500ms; }
+        .timeline .line-item .event-date .done {
+          transform: translateX(0) scale(1);
+          color: #333; }
+
+  .terminal {
+    transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transiton: all 0.5s ease;
+    font-family: "Courier New", monospace;
+    height: 300px;
+    overflow-y: scroll;
+    border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #EEE;
+    margin: 40px 0;
+    padding: 10px;
+    /*& > .line:first-of-type {
+    	margin-top: 120px ;
+    }*/ }
+    .terminal .blank {
+      width: 1px;
+      height: 18px; }
+    .terminal .line {
+      clear: both; }
+      .terminal .line .meta::after {
+        font-weight: bold;
+        content: " $ "; }
+      .terminal .line .cmd {
+        display: inline-block;
+        border: 0px;
+        width: auto;
+        outline: none;
+        -webkit-appearance: none; }
+      .terminal .line .cursor::after {
+        content: "█";
+        animation: blink 1s infinite step-end;
+        -ms-animation: blink 1s infinite step-end;
+        -moz-animation: blink 1s infinite step-end;
+        -webkit-animation: blink 1s infinite step-end; }
+
+  .content {
     clear: both;
     padding: 50px 0;
     width: auto;
